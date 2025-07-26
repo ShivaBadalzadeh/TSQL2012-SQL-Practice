@@ -1,0 +1,5 @@
+SELECT DATEPART(MONTH, orderdate) MONTH_NUM, DATENAME(MONTH,orderdate) MONTH_NAME ,COUNT(orderid) ORDER_COUNT FROM Sales.Orders
+where YEAR(orderdate) = 2008
+GROUP BY DATENAME(MONTH,orderdate),DATEPART(MONTH, orderdate)
+ORDER BY MONTH_NUM
+
